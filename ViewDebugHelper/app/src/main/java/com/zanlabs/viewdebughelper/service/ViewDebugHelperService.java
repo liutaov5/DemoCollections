@@ -2,7 +2,6 @@ package com.zanlabs.viewdebughelper.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
-import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
@@ -12,7 +11,6 @@ import android.view.accessibility.AccessibilityEvent;
 import com.zanlabs.viewdebughelper.ActivityHelper;
 import com.zanlabs.viewdebughelper.ViewDebugHelperApplication;
 
-@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class ViewDebugHelperService extends AccessibilityService {
 
     public static void log(String message) {
@@ -22,7 +20,6 @@ public class ViewDebugHelperService extends AccessibilityService {
     /**
      * {@inheritDoc}
      */
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     public void onServiceConnected() {
         super.onServiceConnected();
@@ -38,7 +35,6 @@ public class ViewDebugHelperService extends AccessibilityService {
         setServiceInfo(accessibilityServiceInfo);
     }
 
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
         if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {

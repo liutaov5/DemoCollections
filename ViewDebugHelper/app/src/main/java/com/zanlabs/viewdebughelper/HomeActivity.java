@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
                     FloatWindowService.start(HomeActivity.this);
                 }
                 Toast.makeText(HomeActivity.this,mIsServiceRunning?"服务已停止":"服务已启动",Toast.LENGTH_SHORT).show();
+                mActionBtn.setText(mIsServiceRunning?"启动服务":"停止服务");
             }
         });
 
